@@ -4,6 +4,7 @@ public class Prob04 {
 
 	public static void main(String[] args) {
 		char[] c1 = reverse( "Hello World" );
+		
 		printCharArray( c1 );
 		
 		char[] c2 = reverse( "Java Programming!" );
@@ -11,10 +12,23 @@ public class Prob04 {
 	}
 	
 	public static char[] reverse(String str) {
-		/* 코드를 완성합니다 */
+		
+		char[] c1 = str.toCharArray();
+		int left  = 0;             
+	    int right = c1.length - 1;  
+
+	    while (left < right) {
+	      char temp = c1[left];
+	      c1[left]  = c1[right];    
+	      c1[right] = temp;
+
+	      left++; right--;        
+	    }
+		
+		return c1;
 	}
 
 	public static void printCharArray(char[] array){
-		/* 코드를 완성합니다 */
+		System.out.println(array);
 	}
 }
